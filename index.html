@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAHI SMM PROVIDER</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+min-height:100vh;
+background:linear-gradient(-45deg,#141e30,#243b55,#1f4037,#99f2c8);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
+display:flex;justify-content:center;align-items:center;
+color:white;padding:20px;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:100%;max-width:650px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:30px;border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+h2{text-align:center;margin-bottom:10px;}
+
+.description{
+font-size:13px;opacity:0.85;margin-bottom:15px;
+text-align:center;min-height:40px;
+}
+
+select,input{
+width:100%;padding:12px;margin:10px 0 20px;
+border:none;border-radius:10px;
+background:rgba(255,255,255,0.1);color:white;
+}
+
+select option{color:black;}
+
+.total-box{
+text-align:center;font-size:20px;margin-bottom:20px;font-weight:600;
+}
+
+button{
+width:100%;padding:14px;border:none;border-radius:12px;
+background:linear-gradient(90deg,#00f5a0,#00d9f5);
+font-weight:600;cursor:pointer;transition:0.3s;margin-top:10px;
+}
+
+button:hover{transform:scale(1.05);}
+button:disabled{opacity:0.5;cursor:not-allowed;}
+
+.qr-box{display:none;margin-top:20px;text-align:center;}
+
+.progress-circle{
+width:100px;height:100px;border-radius:50%;
+background:conic-gradient(#00f5a0 0deg, rgba(255,255,255,0.1) 0deg);
+display:flex;justify-content:center;align-items:center;
+margin:15px auto;font-weight:600;font-size:18px;
+}
+
+.trust{
+margin-top:20px;font-size:12px;text-align:center;opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>🚀 RAHI SMM PROVIDER</h2>
+
+<div class="description" id="serviceDesc">
+Select a service to see description.
+</div>
+
+<select id="service">
+
+<!-- ORIGINAL SERVICES -->
+<option value="110" data-desc="High quality Instagram followers to boost your profile authority.">Instagram Followers – ₹110 / 1000</option>
+<option value="10" data-desc="Real Instagram likes for better engagement rate.">Instagram Likes – ₹10 / 1000</option>
+<option value="0.7" data-desc="Fast Instagram views to improve reach and visibility.">Instagram Views – ₹0.7 / 1000</option>
+<option value="180" data-desc="Grow your YouTube channel with real subscribers.">YouTube Subscribers – ₹180 / 1000</option>
+<option value="25" data-desc="Increase YouTube video reach with high retention views.">YouTube Views – ₹25 / 1000</option>
+<option value="2000" data-desc="Boost watchtime hours for monetization requirements.">YouTube Watchtime – ₹2000 / 1000 Hours</option>
+<option value="45" data-desc="Telegram members to grow your community faster.">Telegram Members – ₹45 / 1000</option>
+<option value="50" data-desc="Facebook followers to increase social proof.">Facebook Followers – ₹50 / 1000</option>
+
+<!-- NEW SERVICES (100% PROFIT ADDED) -->
+<option value="300" data-desc="Instagram Comments to increase post engagement">Instagram Comments – ₹300 / 1000</option>
+<option value="70" data-desc="Instagram Story Views & Impressions for more reach">Instagram Story Views – ₹70 / 1000</option>
+<option value="180" data-desc="Instagram Poll Votes & Post Saves to boost interaction">Instagram Poll Votes – ₹180 / 1000</option>
+<option value="110" data-desc="Instagram Live Stream Views for live audience growth">Instagram Live Stream Views – ₹110 / 1000</option>
+<option value="160" data-desc="TikTok Followers for faster profile growth">TikTok Followers – ₹160 / 1000</option>
+<option value="40" data-desc="TikTok Likes for video engagement">TikTok Likes – ₹40 / 1000</option>
+<option value="120" data-desc="YouTube Retention Views for quality watch time">YouTube Retention Views – ₹120 / 1000</option>
+<option value="80" data-desc="Facebook Reactions to increase post engagement">Facebook Reactions – ₹80 / 1000</option>
+<option value="60" data-desc="Twitter Followers for broad audience reach">Twitter Followers – ₹60 / 1000</option>
+<option value="50" data-desc="Twitter Retweets to boost tweet engagement">Twitter Retweets – ₹50 / 1000</option>
+
+</select>
+
+<input type="number" id="quantity" min="100" placeholder="Enter Quantity (Minimum 100)">
+
+<div class="total-box">
+Total Price: ₹<span id="total">0.00</span>
+</div>
+
+<button onclick="generateQR()">Generate QR Code</button>
+
+<div class="qr-box" id="qrBox">
+<img id="qrImage" width="200"><br>
+<div class="progress-circle" id="progressCircle">10</div>
+<button onclick="paymentDone()" id="payBtn" disabled style="background:#ff9800;">
+I Have Paid
+</button>
+</div>
+
+<div class="trust">
+✔ Secure Payments<br>
+✔ Screenshot Required For Confirmation
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
